@@ -24,7 +24,7 @@ public class BasicBoardBuilderTest{
 			x++;
 		}
 		for(int i = 3; i< 8; i+=2){
-			printTile(i,13,board, x);
+			printTile(i,14,board, x);
 			x++;
 		}
 	}

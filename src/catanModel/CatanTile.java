@@ -1,4 +1,7 @@
 package catanModel;
+
+import java.awt.Image;
+
 public abstract class CatanTile{
 	private CatanLocation loc;
 	private boolean hasRobber;
@@ -7,6 +10,10 @@ public abstract class CatanTile{
 		this.loc = loc;
 		hasRobber = false;
 	}
+	public int cropX0(){return 0;}
+	public int cropY0(){return 0;}
+	public int cropX(){return 500;}
+	public int cropY(){return 500;}
 	public CatanLocation getLocation(){
 		return loc;
 	}
@@ -20,6 +27,7 @@ public abstract class CatanTile{
 	public boolean getHasRobber(){
 		return hasRobber;
 	}
+	public abstract Image getImage();
 	public void addRobber(){hasRobber = true;}
 	public void removeRobber(){hasRobber = false;}
 }

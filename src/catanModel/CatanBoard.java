@@ -30,4 +30,9 @@ public class CatanBoard{
 	public CatanTile getTile(int x, int y){
 		return tileMap.get(CatanLocation.getInstance(x,y));
 	}
+	public ArrayList<CatanTile> tileList(){
+		ArrayList<CatanTile> tlst = new ArrayList<CatanTile>();
+		for(CatanLocation loc : tileMap.keySet()) tlst.add(tileMap.get(loc));
+		return tlst;
+	}
 }
