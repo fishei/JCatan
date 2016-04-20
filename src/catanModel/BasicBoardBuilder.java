@@ -60,8 +60,8 @@ public class BasicBoardBuilder implements BoardBuilder{
 			while(tilesRemaining.get(tileTypes.get(tileType)) < 1){
 				tileType = rand.nextInt(6);
 			}
-			tiles.put(loc, tileType);
-			tilesRemaining.put(tileType, tilesRemaining.get(tileTypes.get(tileType)) - 1);
+			tiles.put(loc, tileTypes.get(tileType));
+			tilesRemaining.put(tileTypes.get(tileType), tilesRemaining.get(tileTypes.get(tileType)) - 1);
 		}
 	}
 	private void initMap(){
@@ -87,7 +87,6 @@ public class BasicBoardBuilder implements BoardBuilder{
 					for(CatanTile tl : getAdjTiles(loc)){
 						if(tl instanceof ResourceTile && (((ResourceTile)tl).getNum() == 6 || ((ResourceTile)tl).getNum() == 8)) adjHighNum = true;
 					}
-					if(adjHighNum) System.out.println("test");
 					if(adjHighNum && !hasLowNumRemaining(numsRemaining)){
 						good = false;
 						break;

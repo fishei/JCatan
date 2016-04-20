@@ -6,12 +6,12 @@ import catanModel.*;
 
 public class bBFrame extends JFrame{
 	public static final String appTitle = "Random Catan Board Generator";
-	private boardPanel bPanel;
+	private bBMainPanel mainPanel;
 	public bBFrame(){
 		super();
 		setSize(500,500);
-		bPanel = new boardPanel(BasicBoardBuilder.getInstance());
-		add(bPanel);
+		mainPanel = new bBMainPanel();
+		add(mainPanel);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}

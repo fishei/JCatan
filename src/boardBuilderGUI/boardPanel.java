@@ -41,6 +41,14 @@ public class boardPanel extends JPanel{
 	}
 	public void newBoard(){
 		board = bob.buildBoard();
+		tiles = board.tileList();
+		maxX = 0; maxY = 0;
+		for(CatanTile tile: tiles){
+			maxX = Math.max(maxX, tile.getLocation().getX());
+			maxY = Math.max(maxY, tile.getLocation().getY());
+		}
+		maxX += 1;
+		maxY += 2;
 	}
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
