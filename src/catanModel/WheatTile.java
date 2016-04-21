@@ -16,7 +16,7 @@ public class WheatTile extends ResourceTile{
 	public Image getImage(){
 		if (image == null){
 			try {
-				image = ImageIO.read(new File("src/catanModel/wheat.jpg"));
+				image = ImageIO.read(getClass().getResource("wheat.jpg"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

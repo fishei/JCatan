@@ -18,7 +18,7 @@ public class OreTile extends ResourceTile{
 	public Image getImage(){
 		if (image == null){
 			try {
-				image = ImageIO.read(new File("src/catanModel/ore.jpg"));
+				image = ImageIO.read(getClass().getResource("ore.jpg"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

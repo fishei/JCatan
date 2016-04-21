@@ -15,7 +15,7 @@ public class WoodTile extends ResourceTile{
 	public Image getImage(){
 		if (image == null){
 			try {
-				image = ImageIO.read(new File("src/catanModel/wood.jpg"));
+				image = ImageIO.read(getClass().getResource("wood.jpg"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

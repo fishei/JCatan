@@ -16,7 +16,7 @@ public class SheepTile extends ResourceTile{
 	public Image getImage(){
 		if (image == null){
 			try {
-				image = ImageIO.read(new File("src/catanModel/sheep.jpg"));
+				image = ImageIO.read(getClass().getResource("sheep.jpg"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -15,7 +15,7 @@ public class DesertTile extends CatanTile{
 	public Image getImage(){
 		if (image == null){
 			try {
-				image = ImageIO.read(new File("src/catanModel/desert.jpg"));
+				image = ImageIO.read(getClass().getResource("desert.jpg"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
