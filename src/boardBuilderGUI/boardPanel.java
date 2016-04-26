@@ -11,20 +11,24 @@ import java.util.ArrayList;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
+import boardBuilders.BoardFactory;
+
 import catanModel.*;
 
 public class boardPanel extends JPanel{
+	public static final Color HLC = new Color((float)1.0,(float)0,(float)1,(float).75);
 	public static final Color WATER = Color.BLUE;
 	public static final Color TAN = new Color(210,180,140);
 	private CatanBoard board;
-	private BoardBuilder bob;
+	private BoardFactory bob;
 	private static final double y_pos_factor = .5;
 	private static final double x_pos_factor = Math.sqrt(2.0) / 2.0;
 	private double maxX = 0;
 	private double maxY = 0;
 	private double sideLen;
+	private Intersection intsec = null;
 	private ArrayList<CatanTile> tiles;
-	public boardPanel(BoardBuilder bob){
+	public boardPanel(BoardFactory bob){
 		super();
 		this.bob = bob;
 		this.board = bob.buildBoard();
@@ -49,6 +53,9 @@ public class boardPanel extends JPanel{
 		}
 		maxX += 1;
 		maxY += 2;
+	}
+	public void setIntersection(int x, int y){
+		intsec = board.getIntersection((int)Math.round(((double)x)/(sideLen * x_pos_factor)), (int)Math.round(((double)y)/(sideLen * y_pos_factor)));
 	}
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
@@ -88,5 +95,16 @@ public class boardPanel extends JPanel{
 			}
 			
 		}
+		if(intsec != null){
+			Color c = g.getColor();
+			g.setColor(HLC);
+			double r = sideLen / 2;
+			int x = (int) (intsec.getLocation().getX() * sideLen * x_pos_factor - r/2);
+			int y = (int) (intsec.getLocation().getY() * sideLen * y_pos_factor - r/2);
+			g.fillOval(x,y,(int)r,(int)r);
+			g.setColor(c);
+		}
 	}
+	public CatanBoard getBoard(){return board;}
+	public Intersection getIntsec(){return intsec;}
 }

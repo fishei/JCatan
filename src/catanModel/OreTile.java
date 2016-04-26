@@ -2,7 +2,6 @@ package catanModel;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -26,4 +25,5 @@ public class OreTile extends ResourceTile{
 		}
 		return image;
 	}
+	public Integer getType(){return CatanBoard.ORE;}
 }

@@ -24,4 +24,5 @@ public class SheepTile extends ResourceTile{
 		}
 		return image;
 	}
+	public Integer getType(){return CatanBoard.SHEEP;}
 }

@@ -24,4 +24,5 @@ public class WheatTile extends ResourceTile{
 		}
 		return image;
 	}
+	public Integer getType(){return CatanBoard.WHEAT;}
 }

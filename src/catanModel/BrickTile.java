@@ -24,4 +24,5 @@ public class BrickTile extends ResourceTile{
 		}
 		return image;
 	}
+	public Integer getType(){return CatanBoard.BRICK;}
 }

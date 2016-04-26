@@ -8,7 +8,7 @@ public class bBFrame extends JFrame{
 	public static final String appTitle = "Random Catan Board Generator";
 	private bBMainPanel mainPanel;
 	public bBFrame(){
-		super();
+		super(appTitle);
 		setSize(500,500);
 		mainPanel = new bBMainPanel();
 		add(mainPanel);

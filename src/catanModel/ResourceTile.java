@@ -9,4 +9,11 @@ public abstract class ResourceTile extends CatanTile{
 	public int getNum(){
 		return num;
 	}
+	public int numDots(){
+		for(int i = 1; i < 6; i++){
+			if(7 - 6 + i == num || 7 + 6 - i == num) return i;
+		}
+		return -1;
+	}
+	public abstract Integer getType();
 }
